@@ -1,0 +1,1274 @@
+Timing Analyzer report for main
+Wed Sep 08 14:32:42 2021
+Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clk'
+ 13. Slow 1200mV 85C Model Hold: 'clk'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'clk'
+ 22. Slow 1200mV 0C Model Hold: 'clk'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'clk'
+ 30. Fast 1200mV 0C Model Hold: 'clk'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; main                                                ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.04        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.4%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                       ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 257.2 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clk   ; -2.888 ; -34.488            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clk   ; 1.089 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; clk   ; -3.000 ; -29.985                          ;
++-------+--------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                                                                    ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.888 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.803      ;
+; -2.845 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.762      ;
+; -2.835 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 3.748      ;
+; -2.828 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.743      ;
+; -2.816 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.078     ; 3.736      ;
+; -2.815 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.736      ;
+; -2.806 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.721      ;
+; -2.805 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.720      ;
+; -2.787 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.708      ;
+; -2.787 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.706      ;
+; -2.780 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 3.693      ;
+; -2.776 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.695      ;
+; -2.752 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.669      ;
+; -2.752 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.671      ;
+; -2.748 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.667      ;
+; -2.715 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 3.639      ;
+; -2.706 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.621      ;
+; -2.699 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.614      ;
+; -2.695 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.610      ;
+; -2.680 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 3.604      ;
+; -2.651 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.572      ;
+; -2.642 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 3.555      ;
+; -2.627 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.078     ; 3.547      ;
+; -2.616 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.537      ;
+; -2.609 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.524      ;
+; -2.603 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.522      ;
+; -2.598 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.074     ; 3.522      ;
+; -2.594 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.513      ;
+; -2.594 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.513      ;
+; -2.590 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.076     ; 3.512      ;
+; -2.580 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.499      ;
+; -2.571 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.085     ; 3.484      ;
+; -2.570 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.074     ; 3.494      ;
+; -2.565 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.484      ;
+; -2.562 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.076     ; 3.484      ;
+; -2.552 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.471      ;
+; -2.542 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.463      ;
+; -2.512 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.429      ;
+; -2.502 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.417      ;
+; -2.500 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.415      ;
+; -2.493 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.412      ;
+; -2.448 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.367      ;
+; -2.403 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.320      ;
+; -2.376 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.297      ;
+; -2.366 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.083     ; 3.281      ;
+; -2.363 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.284      ;
+; -2.354 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.275      ;
+; -2.352 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.271      ;
+; -2.351 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.268      ;
+; -2.315 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.236      ;
+; -2.305 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.222      ;
+; -2.304 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.221      ;
+; -2.298 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.217      ;
+; -2.296 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.213      ;
+; -2.292 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.213      ;
+; -2.284 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.203      ;
+; -2.281 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.202      ;
+; -2.264 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.182      ;
+; -2.247 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.164      ;
+; -2.238 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.155      ;
+; -2.231 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.149      ;
+; -2.223 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.144      ;
+; -2.211 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.128      ;
+; -2.203 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.124      ;
+; -2.202 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.080     ; 3.120      ;
+; -2.170 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.089      ;
+; -2.169 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.088      ;
+; -2.168 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.089      ;
+; -2.163 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.084      ;
+; -2.162 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.083      ;
+; -2.129 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.050      ;
+; -2.118 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.077     ; 3.039      ;
+; -2.095 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.079     ; 3.014      ;
+; -2.094 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 3.011      ;
+; -2.070 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.991      ;
+; -2.064 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.985      ;
+; -2.055 ; instruction_register:myInstructionReg|literal[7] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.976      ;
+; -2.048 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.969      ;
+; -2.040 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.959      ;
+; -2.029 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.950      ;
+; -2.017 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.936      ;
+; -2.001 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.922      ;
+; -1.993 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.078     ; 2.913      ;
+; -1.993 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.078     ; 2.913      ;
+; -1.983 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.904      ;
+; -1.973 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.892      ;
+; -1.966 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.885      ;
+; -1.945 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.864      ;
+; -1.942 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.081     ; 2.859      ;
+; -1.929 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.848      ;
+; -1.922 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.083     ; 2.837      ;
+; -1.913 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.834      ;
+; -1.899 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.818      ;
+; -1.836 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.755      ;
+; -1.811 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.079     ; 2.730      ;
+; -1.809 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.730      ;
+; -1.732 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.078     ; 2.652      ;
+; -1.732 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.078     ; 2.652      ;
+; -1.731 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.652      ;
+; -1.730 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.077     ; 2.651      ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clk'                                                                                                                                                 ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.089 ; controlUnit:myControlUnit|state[1]               ; controlUnit:myControlUnit|state[0]               ; clk          ; clk         ; 0.000        ; 0.080      ; 1.355      ;
+; 1.108 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.375      ;
+; 1.112 ; controlUnit:myControlUnit|state[0]               ; controlUnit:myControlUnit|state[1]               ; clk          ; clk         ; 0.000        ; 0.080      ; 1.378      ;
+; 1.112 ; controlUnit:myControlUnit|state[0]               ; controlUnit:myControlUnit|state[0]               ; clk          ; clk         ; 0.000        ; 0.080      ; 1.378      ;
+; 1.123 ; controlUnit:myControlUnit|state[1]               ; controlUnit:myControlUnit|state[1]               ; clk          ; clk         ; 0.000        ; 0.080      ; 1.389      ;
+; 1.283 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.083      ; 1.552      ;
+; 1.317 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.584      ;
+; 1.367 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.632      ;
+; 1.403 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.080      ; 1.669      ;
+; 1.431 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.696      ;
+; 1.436 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.703      ;
+; 1.474 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.739      ;
+; 1.488 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.755      ;
+; 1.495 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.077      ; 1.758      ;
+; 1.498 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.765      ;
+; 1.526 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.793      ;
+; 1.530 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.795      ;
+; 1.557 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.824      ;
+; 1.603 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.078      ; 1.867      ;
+; 1.612 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.080      ; 1.878      ;
+; 1.616 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[4] ; clk          ; clk         ; 0.000        ; 0.078      ; 1.880      ;
+; 1.617 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[4] ; clk          ; clk         ; 0.000        ; 0.078      ; 1.881      ;
+; 1.629 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.894      ;
+; 1.635 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.077      ; 1.898      ;
+; 1.649 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.080      ; 1.915      ;
+; 1.651 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.916      ;
+; 1.702 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 1.967      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[1]  ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[2]  ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[0]  ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[0] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[3] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[6] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.730 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[7] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.997      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[1]  ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[2]  ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[0]  ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[0] ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[3] ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[6] ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.734 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[7] ; clk          ; clk         ; 0.000        ; 0.081      ; 2.001      ;
+; 1.740 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.005      ;
+; 1.741 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.008      ;
+; 1.769 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.036      ;
+; 1.772 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[1] ; clk          ; clk         ; 0.000        ; 0.083      ; 2.041      ;
+; 1.772 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[2] ; clk          ; clk         ; 0.000        ; 0.083      ; 2.041      ;
+; 1.776 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[1] ; clk          ; clk         ; 0.000        ; 0.083      ; 2.045      ;
+; 1.776 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[2] ; clk          ; clk         ; 0.000        ; 0.083      ; 2.045      ;
+; 1.777 ; instruction_register:myInstructionReg|literal[7] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.044      ;
+; 1.786 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.051      ;
+; 1.793 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.058      ;
+; 1.796 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.058      ;
+; 1.802 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.071      ;
+; 1.802 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.071      ;
+; 1.802 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.071      ;
+; 1.802 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.071      ;
+; 1.806 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.071      ;
+; 1.812 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.076      ;
+; 1.815 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.082      ;
+; 1.817 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.084      ;
+; 1.842 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.107      ;
+; 1.849 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.114      ;
+; 1.859 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.126      ;
+; 1.862 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.129      ;
+; 1.894 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.161      ;
+; 1.930 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.080      ; 2.196      ;
+; 1.931 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.196      ;
+; 1.947 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.214      ;
+; 1.948 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.215      ;
+; 1.964 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.228      ;
+; 1.998 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.263      ;
+; 2.003 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.268      ;
+; 2.017 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.286      ;
+; 2.017 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.286      ;
+; 2.017 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.286      ;
+; 2.017 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.286      ;
+; 2.026 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.290      ;
+; 2.033 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.298      ;
+; 2.036 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.301      ;
+; 2.051 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.315      ;
+; 2.052 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.077      ; 2.315      ;
+; 2.075 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.077      ; 2.338      ;
+; 2.083 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.350      ;
+; 2.083 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.350      ;
+; 2.092 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.357      ;
+; 2.100 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.364      ;
+; 2.110 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.080      ; 2.376      ;
+; 2.146 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.413      ;
+; 2.150 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.415      ;
+; 2.158 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.423      ;
+; 2.174 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.436      ;
+; 2.189 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.454      ;
+; 2.224 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.081      ; 2.491      ;
+; 2.230 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.085      ; 2.501      ;
+; 2.237 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.502      ;
+; 2.247 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.079      ; 2.512      ;
+; 2.248 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.083      ; 2.517      ;
+; 2.259 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.085      ; 2.530      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 280.98 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -2.559 ; -29.922           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.979 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -29.985                         ;
++-------+--------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                                                                     ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.559 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.076     ; 3.482      ;
+; -2.549 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 3.475      ;
+; -2.520 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.450      ;
+; -2.510 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.434      ;
+; -2.502 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.078     ; 3.423      ;
+; -2.492 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.416      ;
+; -2.482 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.076     ; 3.405      ;
+; -2.468 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.395      ;
+; -2.458 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.388      ;
+; -2.434 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.078     ; 3.355      ;
+; -2.432 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 3.358      ;
+; -2.429 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.065     ; 3.363      ;
+; -2.418 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.345      ;
+; -2.416 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.346      ;
+; -2.405 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.332      ;
+; -2.387 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.314      ;
+; -2.379 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.065     ; 3.313      ;
+; -2.377 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.301      ;
+; -2.375 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.299      ;
+; -2.370 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.076     ; 3.293      ;
+; -2.355 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.285      ;
+; -2.341 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.271      ;
+; -2.313 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.078     ; 3.234      ;
+; -2.303 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.076     ; 3.226      ;
+; -2.303 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.067     ; 3.235      ;
+; -2.291 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.221      ;
+; -2.279 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.206      ;
+; -2.274 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.201      ;
+; -2.267 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.194      ;
+; -2.264 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.065     ; 3.198      ;
+; -2.256 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.183      ;
+; -2.253 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.067     ; 3.185      ;
+; -2.249 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.078     ; 3.170      ;
+; -2.225 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 3.151      ;
+; -2.219 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.146      ;
+; -2.219 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.069     ; 3.149      ;
+; -2.217 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.065     ; 3.151      ;
+; -2.201 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.128      ;
+; -2.191 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.115      ;
+; -2.189 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.113      ;
+; -2.168 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 3.095      ;
+; -2.132 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 3.060      ;
+; -2.112 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.075     ; 3.036      ;
+; -2.092 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 3.018      ;
+; -2.080 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 3.006      ;
+; -2.065 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.995      ;
+; -2.057 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.987      ;
+; -2.048 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 2.975      ;
+; -2.040 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.970      ;
+; -2.009 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.939      ;
+; -2.005 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 2.931      ;
+; -1.999 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.927      ;
+; -1.995 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.923      ;
+; -1.986 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.916      ;
+; -1.984 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.914      ;
+; -1.967 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.895      ;
+; -1.962 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 2.887      ;
+; -1.953 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 2.880      ;
+; -1.953 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 2.878      ;
+; -1.948 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 2.873      ;
+; -1.941 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.074     ; 2.866      ;
+; -1.937 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 2.863      ;
+; -1.936 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.864      ;
+; -1.914 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.844      ;
+; -1.885 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.815      ;
+; -1.883 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.813      ;
+; -1.873 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.801      ;
+; -1.871 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.799      ;
+; -1.864 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.794      ;
+; -1.863 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.793      ;
+; -1.846 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.776      ;
+; -1.827 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.073     ; 2.753      ;
+; -1.827 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 2.754      ;
+; -1.821 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.751      ;
+; -1.782 ; instruction_register:myInstructionReg|literal[7] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.712      ;
+; -1.782 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.710      ;
+; -1.777 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.707      ;
+; -1.768 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.698      ;
+; -1.763 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.693      ;
+; -1.763 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.693      ;
+; -1.759 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.689      ;
+; -1.755 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.683      ;
+; -1.750 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.680      ;
+; -1.738 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.668      ;
+; -1.736 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.664      ;
+; -1.726 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 2.653      ;
+; -1.719 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.649      ;
+; -1.696 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.624      ;
+; -1.696 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.074     ; 2.621      ;
+; -1.649 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.579      ;
+; -1.635 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.072     ; 2.562      ;
+; -1.632 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.560      ;
+; -1.625 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.076     ; 2.548      ;
+; -1.569 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.071     ; 2.497      ;
+; -1.556 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.072     ; 2.483      ;
+; -1.556 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.486      ;
+; -1.545 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.475      ;
+; -1.545 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.475      ;
+; -1.498 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.428      ;
+; -1.496 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.069     ; 2.426      ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clk'                                                                                                                                                  ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.979 ; controlUnit:myControlUnit|state[1]               ; controlUnit:myControlUnit|state[0]               ; clk          ; clk         ; 0.000        ; 0.071      ; 1.221      ;
+; 1.010 ; controlUnit:myControlUnit|state[0]               ; controlUnit:myControlUnit|state[0]               ; clk          ; clk         ; 0.000        ; 0.071      ; 1.252      ;
+; 1.014 ; controlUnit:myControlUnit|state[0]               ; controlUnit:myControlUnit|state[1]               ; clk          ; clk         ; 0.000        ; 0.071      ; 1.256      ;
+; 1.015 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.260      ;
+; 1.020 ; controlUnit:myControlUnit|state[1]               ; controlUnit:myControlUnit|state[1]               ; clk          ; clk         ; 0.000        ; 0.071      ; 1.262      ;
+; 1.172 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.075      ; 1.418      ;
+; 1.189 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.434      ;
+; 1.249 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.492      ;
+; 1.291 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.533      ;
+; 1.297 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.542      ;
+; 1.305 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.547      ;
+; 1.340 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.585      ;
+; 1.344 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.587      ;
+; 1.352 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.597      ;
+; 1.382 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.624      ;
+; 1.390 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.069      ; 1.630      ;
+; 1.397 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.642      ;
+; 1.426 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.671      ;
+; 1.467 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[4] ; clk          ; clk         ; 0.000        ; 0.069      ; 1.707      ;
+; 1.473 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[4] ; clk          ; clk         ; 0.000        ; 0.069      ; 1.713      ;
+; 1.477 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.069      ; 1.717      ;
+; 1.477 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.720      ;
+; 1.478 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.720      ;
+; 1.480 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.723      ;
+; 1.489 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.069      ; 1.729      ;
+; 1.510 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.752      ;
+; 1.517 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.759      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[1]  ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[2]  ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[0]  ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[0] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[3] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[5] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[6] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.567 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[7] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.811      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[1]  ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[2]  ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[0]  ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[0] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[3] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[5] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[6] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.573 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[7] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.817      ;
+; 1.588 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.833      ;
+; 1.590 ; instruction_register:myInstructionReg|literal[7] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.835      ;
+; 1.594 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.836      ;
+; 1.601 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.844      ;
+; 1.604 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[1] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.851      ;
+; 1.604 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[2] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.851      ;
+; 1.610 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[1] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.857      ;
+; 1.610 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[2] ; clk          ; clk         ; 0.000        ; 0.076      ; 1.857      ;
+; 1.614 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.859      ;
+; 1.630 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.076      ; 1.877      ;
+; 1.630 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.076      ; 1.877      ;
+; 1.630 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.067      ; 1.868      ;
+; 1.630 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.076      ; 1.877      ;
+; 1.630 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.076      ; 1.877      ;
+; 1.633 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.878      ;
+; 1.643 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.885      ;
+; 1.656 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.899      ;
+; 1.657 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.902      ;
+; 1.667 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.909      ;
+; 1.669 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.069      ; 1.909      ;
+; 1.683 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.928      ;
+; 1.685 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.930      ;
+; 1.688 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.072      ; 1.931      ;
+; 1.701 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.946      ;
+; 1.733 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.071      ; 1.975      ;
+; 1.747 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.992      ;
+; 1.748 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 1.993      ;
+; 1.781 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.072      ; 2.024      ;
+; 1.789 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.069      ; 2.029      ;
+; 1.802 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.044      ;
+; 1.829 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.071      ;
+; 1.838 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.069      ; 2.078      ;
+; 1.845 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.092      ;
+; 1.845 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.092      ;
+; 1.845 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.092      ;
+; 1.845 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.092      ;
+; 1.851 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.069      ; 2.091      ;
+; 1.855 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.097      ;
+; 1.856 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.098      ;
+; 1.859 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.069      ; 2.099      ;
+; 1.864 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 2.109      ;
+; 1.865 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 2.110      ;
+; 1.889 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.131      ;
+; 1.893 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.069      ; 2.133      ;
+; 1.925 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.069      ; 2.165      ;
+; 1.926 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.074      ; 2.171      ;
+; 1.934 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.176      ;
+; 1.942 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.072      ; 2.185      ;
+; 1.952 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.072      ; 2.195      ;
+; 1.958 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.071      ; 2.200      ;
+; 1.976 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.067      ; 2.214      ;
+; 2.001 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.074      ; 2.246      ;
+; 2.020 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.072      ; 2.263      ;
+; 2.025 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.072      ; 2.268      ;
+; 2.027 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.276      ;
+; 2.046 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.076      ; 2.293      ;
+; 2.060 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.078      ; 2.309      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clk   ; -0.876 ; -6.217            ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clk   ; 0.481 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clk   ; -3.000 ; -25.155                         ;
++-------+--------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                                                                     ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.876 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.820      ;
+; -0.865 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.813      ;
+; -0.857 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.799      ;
+; -0.848 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.790      ;
+; -0.843 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.785      ;
+; -0.839 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.787      ;
+; -0.837 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.783      ;
+; -0.829 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.047     ; 1.769      ;
+; -0.829 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.771      ;
+; -0.817 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.759      ;
+; -0.811 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.757      ;
+; -0.811 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.047     ; 1.751      ;
+; -0.806 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.752      ;
+; -0.801 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.751      ;
+; -0.787 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.735      ;
+; -0.780 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.726      ;
+; -0.776 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.728      ;
+; -0.775 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.037     ; 1.725      ;
+; -0.775 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.723      ;
+; -0.764 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.716      ;
+; -0.762 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.704      ;
+; -0.751 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.697      ;
+; -0.750 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.702      ;
+; -0.748 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.692      ;
+; -0.743 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.047     ; 1.683      ;
+; -0.742 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.690      ;
+; -0.741 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.683      ;
+; -0.738 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.035     ; 1.690      ;
+; -0.737 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.685      ;
+; -0.737 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.679      ;
+; -0.737 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.683      ;
+; -0.734 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.047     ; 1.674      ;
+; -0.732 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.678      ;
+; -0.725 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.671      ;
+; -0.711 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.659      ;
+; -0.709 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.655      ;
+; -0.708 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.654      ;
+; -0.700 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.644      ;
+; -0.690 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.636      ;
+; -0.686 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.630      ;
+; -0.680 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.626      ;
+; -0.678 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.620      ;
+; -0.670 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.612      ;
+; -0.669 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.611      ;
+; -0.666 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.612      ;
+; -0.656 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.602      ;
+; -0.652 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.600      ;
+; -0.643 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.587      ;
+; -0.637 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.585      ;
+; -0.625 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.569      ;
+; -0.621 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.567      ;
+; -0.620 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.564      ;
+; -0.610 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.558      ;
+; -0.606 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.554      ;
+; -0.603 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.551      ;
+; -0.597 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.545      ;
+; -0.596 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.544      ;
+; -0.586 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.532      ;
+; -0.576 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.522      ;
+; -0.567 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[4] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.513      ;
+; -0.566 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.510      ;
+; -0.566 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[2] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.514      ;
+; -0.562 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.510      ;
+; -0.561 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.509      ;
+; -0.561 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.509      ;
+; -0.559 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.503      ;
+; -0.544 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.488      ;
+; -0.540 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.484      ;
+; -0.538 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.486      ;
+; -0.535 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.479      ;
+; -0.528 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.474      ;
+; -0.525 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.471      ;
+; -0.521 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.469      ;
+; -0.520 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.466      ;
+; -0.519 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.467      ;
+; -0.519 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.467      ;
+; -0.518 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.466      ;
+; -0.510 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.458      ;
+; -0.510 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.458      ;
+; -0.495 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.441      ;
+; -0.493 ; instruction_register:myInstructionReg|literal[7] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.441      ;
+; -0.489 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.437      ;
+; -0.489 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.435      ;
+; -0.482 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.430      ;
+; -0.480 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.426      ;
+; -0.469 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.415      ;
+; -0.462 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.408      ;
+; -0.452 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.400      ;
+; -0.447 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.391      ;
+; -0.433 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[5] ; clk          ; clk         ; 1.000        ; -0.045     ; 1.375      ;
+; -0.430 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.376      ;
+; -0.408 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[6] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.354      ;
+; -0.405 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.353      ;
+; -0.397 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.343      ;
+; -0.368 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.316      ;
+; -0.368 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.316      ;
+; -0.368 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[0] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.314      ;
+; -0.350 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[7] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.298      ;
+; -0.329 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[3] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.275      ;
+; -0.310 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[1] ; clk          ; clk         ; 1.000        ; -0.039     ; 1.258      ;
++--------+--------------------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clk'                                                                                                                                                  ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                        ; To Node                                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.481 ; controlUnit:myControlUnit|state[1]               ; controlUnit:myControlUnit|state[0]               ; clk          ; clk         ; 0.000        ; 0.041      ; 0.606      ;
+; 0.493 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.620      ;
+; 0.495 ; controlUnit:myControlUnit|state[0]               ; controlUnit:myControlUnit|state[1]               ; clk          ; clk         ; 0.000        ; 0.041      ; 0.620      ;
+; 0.517 ; controlUnit:myControlUnit|state[0]               ; controlUnit:myControlUnit|state[0]               ; clk          ; clk         ; 0.000        ; 0.041      ; 0.642      ;
+; 0.523 ; controlUnit:myControlUnit|state[1]               ; controlUnit:myControlUnit|state[1]               ; clk          ; clk         ; 0.000        ; 0.041      ; 0.648      ;
+; 0.562 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.045      ; 0.691      ;
+; 0.618 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.743      ;
+; 0.641 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.768      ;
+; 0.644 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.771      ;
+; 0.645 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.770      ;
+; 0.658 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.783      ;
+; 0.667 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.039      ; 0.790      ;
+; 0.667 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.794      ;
+; 0.669 ; accumulator:myAccumulator|accOut[6]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.794      ;
+; 0.678 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.805      ;
+; 0.693 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.818      ;
+; 0.696 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.823      ;
+; 0.722 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.847      ;
+; 0.724 ; instruction_register:myInstructionReg|literal[6] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.851      ;
+; 0.732 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.039      ; 0.855      ;
+; 0.733 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.039      ; 0.856      ;
+; 0.737 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.862      ;
+; 0.738 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.863      ;
+; 0.746 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.869      ;
+; 0.748 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.873      ;
+; 0.761 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.886      ;
+; 0.763 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.888      ;
+; 0.779 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[4] ; clk          ; clk         ; 0.000        ; 0.039      ; 0.902      ;
+; 0.784 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.911      ;
+; 0.785 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.912      ;
+; 0.801 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.926      ;
+; 0.807 ; instruction_register:myInstructionReg|literal[7] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.934      ;
+; 0.807 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.932      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[1]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[2]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|opcode[0]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[0] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[3] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[5] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[6] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.813 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[7] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.940      ;
+; 0.818 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.945      ;
+; 0.820 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.947      ;
+; 0.821 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.045      ; 0.950      ;
+; 0.821 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.045      ; 0.950      ;
+; 0.821 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.045      ; 0.950      ;
+; 0.821 ; controlUnit:myControlUnit|state[0]               ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.045      ; 0.950      ;
+; 0.821 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.946      ;
+; 0.826 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.951      ;
+; 0.827 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[1] ; clk          ; clk         ; 0.000        ; 0.045      ; 0.956      ;
+; 0.827 ; controlUnit:myControlUnit|state[0]               ; instruction_register:myInstructionReg|literal[2] ; clk          ; clk         ; 0.000        ; 0.045      ; 0.956      ;
+; 0.827 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.043      ; 0.954      ;
+; 0.836 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.039      ; 0.959      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[1]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[2]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|opcode[0]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[0] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[3] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[5] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[6] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.837 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[7] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.964      ;
+; 0.848 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.037      ; 0.969      ;
+; 0.856 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.981      ;
+; 0.863 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[1] ; clk          ; clk         ; 0.000        ; 0.045      ; 0.992      ;
+; 0.863 ; controlUnit:myControlUnit|state[1]               ; instruction_register:myInstructionReg|literal[2] ; clk          ; clk         ; 0.000        ; 0.045      ; 0.992      ;
+; 0.867 ; accumulator:myAccumulator|accOut[7]              ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.041      ; 0.992      ;
+; 0.878 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.003      ;
+; 0.884 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.011      ;
+; 0.887 ; accumulator:myAccumulator|accOut[3]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.014      ;
+; 0.888 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.015      ;
+; 0.894 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.019      ;
+; 0.899 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.024      ;
+; 0.901 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.026      ;
+; 0.902 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.039      ; 1.025      ;
+; 0.903 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.030      ;
+; 0.903 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.039      ; 1.026      ;
+; 0.920 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.039      ; 1.043      ;
+; 0.924 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[1]              ; clk          ; clk         ; 0.000        ; 0.045      ; 1.053      ;
+; 0.924 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[2]              ; clk          ; clk         ; 0.000        ; 0.045      ; 1.053      ;
+; 0.924 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.045      ; 1.053      ;
+; 0.924 ; controlUnit:myControlUnit|state[1]               ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.045      ; 1.053      ;
+; 0.926 ; accumulator:myAccumulator|accOut[1]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.039      ; 1.049      ;
+; 0.927 ; instruction_register:myInstructionReg|opcode[2]  ; accumulator:myAccumulator|accOut[0]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.052      ;
+; 0.930 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[5]              ; clk          ; clk         ; 0.000        ; 0.039      ; 1.053      ;
+; 0.939 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.064      ;
+; 0.951 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.076      ;
+; 0.961 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.088      ;
+; 0.962 ; instruction_register:myInstructionReg|literal[0] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.089      ;
+; 0.967 ; accumulator:myAccumulator|accOut[0]              ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.092      ;
+; 0.973 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[3]              ; clk          ; clk         ; 0.000        ; 0.039      ; 1.096      ;
+; 0.973 ; instruction_register:myInstructionReg|literal[2] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.098      ;
+; 0.975 ; instruction_register:myInstructionReg|opcode[0]  ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.102      ;
+; 0.978 ; accumulator:myAccumulator|accOut[2]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.103      ;
+; 0.982 ; instruction_register:myInstructionReg|opcode[1]  ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.037      ; 1.103      ;
+; 1.000 ; instruction_register:myInstructionReg|literal[4] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.047      ; 1.131      ;
+; 1.003 ; accumulator:myAccumulator|accOut[5]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.045      ; 1.132      ;
+; 1.014 ; accumulator:myAccumulator|accOut[4]              ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.047      ; 1.145      ;
+; 1.018 ; instruction_register:myInstructionReg|literal[5] ; accumulator:myAccumulator|accOut[7]              ; clk          ; clk         ; 0.000        ; 0.043      ; 1.145      ;
+; 1.020 ; instruction_register:myInstructionReg|literal[3] ; accumulator:myAccumulator|accOut[4]              ; clk          ; clk         ; 0.000        ; 0.037      ; 1.141      ;
+; 1.021 ; instruction_register:myInstructionReg|literal[1] ; accumulator:myAccumulator|accOut[6]              ; clk          ; clk         ; 0.000        ; 0.041      ; 1.146      ;
++-------+--------------------------------------------------+--------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.888  ; 0.481 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -2.888  ; 0.481 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -34.488 ; 0.0   ; 0.0      ; 0.0     ; -29.985             ;
+;  clk             ; -34.488 ; 0.000 ; N/A      ; N/A     ; -29.985             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; zeroF         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; carryF        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; negativeF     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; overflowF     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[0]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[1]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[2]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[3]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[4]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[5]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[6]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; accOut[7]     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; f             ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; in[8]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[7]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[6]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[5]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[4]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[3]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[1]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[9]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; in[10]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; zeroF         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; carryF        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; negativeF     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; overflowF     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; accOut[7]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; f             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; zeroF         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; carryF        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; negativeF     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; overflowF     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[7]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; f             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; zeroF         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; carryF        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; negativeF     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; overflowF     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[0]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[1]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[2]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[3]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[4]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[5]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[6]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; accOut[7]     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; f             ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 328      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 328      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 11    ; 11   ;
+; Unconstrained Input Port Paths  ; 11    ; 11   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 86    ; 86   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; in[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[10]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; accOut[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; carryF      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; f           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; negativeF   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; overflowF   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; zeroF       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; in[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[10]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; accOut[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; accOut[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; carryF      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; f           ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; negativeF   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; overflowF   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; zeroF       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.1 Build 646 04/11/2019 SJ Lite Edition
+    Info: Processing started: Wed Sep 08 14:32:41 2021
+Info: Command: quartus_sta main -c main
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'main.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.888
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.888             -34.488 clk 
+Info (332146): Worst-case hold slack is 1.089
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.089               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -29.985 clk 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.559
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.559             -29.922 clk 
+Info (332146): Worst-case hold slack is 0.979
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.979               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -29.985 clk 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.876
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.876              -6.217 clk 
+Info (332146): Worst-case hold slack is 0.481
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.481               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -25.155 clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4930 megabytes
+    Info: Processing ended: Wed Sep 08 14:32:42 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "zeroF",
+					"strict" : false
+				},
+				{
+					"name" : "carryF",
+					"strict" : false
+				},
+				{
+					"name" : "negativeF",
+					"strict" : false
+				},
+				{
+					"name" : "overflowF",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

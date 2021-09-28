@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "zeroF",
+					"strict" : false
+				},
+				{
+					"name" : "carryF",
+					"strict" : false
+				},
+				{
+					"name" : "negativeF",
+					"strict" : false
+				},
+				{
+					"name" : "overflowF",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[4]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[5]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[6]",
+					"strict" : false
+				},
+				{
+					"name" : "accOut[7]",
+					"strict" : false
+				},
+				{
+					"name" : "f",
+					"strict" : false
+				},
+				{
+					"name" : "in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "in[10]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
